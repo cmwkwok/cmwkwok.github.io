@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	
+	<title>Geog 483 Leaflet Tutorial</title>
+	<!-- This tutorial is based on the official Leaflet quickstart: http://leafletjs.com/examples/quick-start/ -->
+
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<link rel="shortcut icon" type="image/x-icon" href="docs/images/favicon.ico" />
+
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css" />
+	<script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
+
+</head>
+<body>
+
+<style>
+    	body { margin:0; padding:0; background-color:#fdf }
+    	#mapid { position:absolute; width:100%; height:100%;}
+</style>
+
+<div id="mapid"</div>
+<script>
+
+	var mymap = L.map('mapid').setView([43.470654, -80.5429166], 16);
+
+	L.tileLayer("http://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+		attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, '
+	}).addTo(mymap);
+
+	L.marker([43.466, -80.53]).addTo(mymap)
+		.bindPopup("<b>Hello world!</b><br />I am a popup.").openPopup();
+		
+	L.marker([43.47103, -80.53583]).addTo(mymap)
+		.bindPopup("<b><u>UWP STUDENT RESIDENCE</u></b><br><br>"+"<img src =http://strobe.uwaterloo.ca/housing/photo-gallery/index.php?album=uwp%2Fuwp-community&image=Rez012.jpg&p=*full-image width = 200px><br>"+"<a href = https://uwaterloo.ca/housing/ target = _blank>click here to find out more.</a>").openPopup();
+
+	L.marker([43.46978, -80.54238]).addTo(mymap)
+		.bindPopup("<b><u>DANA PORTER LIBRARY</u></b><br><br>"+"<img src =http://photos.wikimapia.org/p/00/01/73/13/90_big.jpg height = 200px><br>"+"<a href =http://www.lib.uwaterloo.ca/ target = blank>click here to find out more</a>")
+		
+	L.marker([43.47185, -80.54532]).addTo(mymap)
+		.bindPopup("<b><u>STUDENT LIFE CENTRE</u></b><br><br>"+"<img src =https://c1.staticflickr.com/6/5506/9351746754_8e1c79f827.jpg height = 200 px><br>"+"<a href =https://uwaterloo.ca/student-life-centre/ target = _blank>click here to find out more</a>")
+		
+	L.marker([43.46786, -80.54637]).addTo(mymap)
+		.bindPopup("<b><u>ST. PAUL'S UNIVERSITY COLLEGE </u></b><br><br>"+"<img src =http://www.bulletin.uwaterloo.ca/images/2003/0523stp2.gif height = 200 px width = 300 px><br>"+"<a href =https://uwaterloo.ca/stpauls/ target = _blank>click here to find out more</a>")
+</script>
+
+</body>
+</html>
